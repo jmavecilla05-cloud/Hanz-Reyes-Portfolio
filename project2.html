@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 2 | Hanz Reyes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">Hanz Reyes</a>
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#projects" class="active">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a href="index.html#contact" class="btn btn-sm">Contact me</a>
+  </header>
+
+  <main class="project-page">
+    <a href="index.html#projects" class="back-link">&larr; Back to projects</a>
+
+    <h1>Transportation cost optimization in shopee express</h1>
+    <p class="lead">It involves analyzing transportation costs, supply availability, and destination demands to identify the optimal allocation of shipments while minimizing total transportation expenses without exceeding available supply or failing to meet demand.</p>
+    <dl class="project-meta">
+      <div><dt>Role</dt><dd>Data analyst</dd></div>
+      <div><dt>Tools</dt><dd> Excel, Solver</dd></div>
+      <div><dt>Timeline</dt><dd>5 days</dd></div>
+    </dl>
+
+    <img class="project-cover" src="project2.jpg" alt="Project 2 dashboard preview">
+
+    <section>
+      <h2>The problem</h2>
+      <p>Inefficient allocation of shipments can increase transportation expenses. The analysis evaluates the per-unit transportation cost for each warehouse-to-store route, the available supply at each warehouse, and the demand at each store. Excel is used to organize the model and calculate its objective value, while Solver is used to search for the least-cost shipment quantities.</p>
+    </section>
+
+    <section>
+      <h2>The data</h2>
+      <img src="p2Data.png" alt="Describe the chart">
+      <ul>  
+        <li>Available product supply from different warehouses.</li>
+        <li>Product demand from  various retail store.</li>
+        <li>Transportation costs per unit from each warehouses to each destination.</li>
+        <li>Total transportation budget.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>My process</h2>
+        <p>Step 1: Data Preparation in Microsoft Excel</p>
+        <p>The route costs were entered into a 3-by-3 cost matrix. Warehouse supply limits were entered in a separate column, and store demand values were entered in a bottom row. A second 3-by-3 table was created for shipment quantities. These shipment cells are the decision variables that Solver is allowed to change.</p>
+
+        <p>Step 2: Transportation model development</p>
+        <p>Tool: Microsoft Excel</p>
+        <ul>
+          <li>Created a transportation cost matrix showing the cost per parcel for each warehouse-to-destination route.</li>
+          <li>Identified the decision variables representing the number of parcels assigned to each route.</li>
+          <li>Established the objective function to minimize total transportation costs.</li>
+          <li>Set constraints based on warehouse supply and delivery hub demand.</li>
+        </ul>
+        <p>What this accomplished:</p>
+        <img src="p2Step2.png" alt="Describe the chart">
+        <p>Developed a Linear Programming transportation model that represents the parcel distribution problem and establishes the conditions needed to achieve the lowest transportation cost.</p>
+
+        <p>Step 3: Optimized Allocation and Cost Calculation using Excel Solver</p>
+        <p>The minimum-cost allocation calculated from the supplied matrix is:</p>
+        <img src="p2Step3.png" alt="Describe the chart">
+        
+        <p>Step 4: Result Validation and Visualization</p>
+        <p>The shipment totals were checked against each warehouse's supply and each store's demand. Warehouse 1 ships 300 units, Warehouse 2 ships 250 units, and Warehouse 3 ships 250 units. Store A receives 250 units, Store B receives 250 units, and Store C receives 300 units. No warehouse exceeds its available supply, and all store demands are met.</p>
+    </section>
+
+    <section>
+      <h2>Key findings</h2>
+      <ul>
+        <li> Warehouse 1 supplies Store A with 250 units and Store C with 50 units.</li>
+        <li> Warehouse 2 supplies Store B with 250 units.</li>
+        <li> Warehouse 3 supplies Store C with 250 units.</li>
+        <li> All 800 units of available supply are allocated, and all 800 units of demand are fulfilled.</li> 
+        <li>The calculated minimum transportation cost is ₱7,250 based on the provided cost matrix and constraints.</li>
+       </ul>
+    </section>
+
+    <section>
+      <h2> Results and Impact </h2>
+      <img src="p2Results.png" alt="Describe the chart">
+      <p> Through the application of the The transportation model identifies a least-cost allocation with a total transportation cost of ₱7,250. The plan satisfies every store's demand without exceeding any warehouse's supply. The analysis demonstrates how Excel can organize the input data and calculate the objective function, while Solver can optimize the shipment quantities. The resulting allocation provides a numerical basis for distribution planning.</p>
+    </section>
+
+    <div class="project-nav">
+      <a href="index.html#projects" class="btn btn-outline">All projects</a>
+      <a href="index.html#contact" class="btn">Contact me</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; Hanz Reyes. All rights reserved.</p>
+    <ul>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

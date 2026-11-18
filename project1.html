@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queuing Analysis of the Fast Lane Adoptation of a Coffee Shop | Hanz Reyes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">Hanz Reyes</a>
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#projects" class="active">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a href="index.html#contact" class="btn btn-sm">Contact me</a>
+  </header>
+
+  <main class="project-page">
+    <a href="index.html#projects" class="back-link">&larr; Back to projects</a>
+
+    <h1>Queuing Analysis of the Fast Lane Adoptation of a Coffee Shop</h1>
+    <p class="lead">Fastlane adoptation is essential for the Queuing problem</p>
+
+    <dl class="project-meta">
+      <div><dt>Role</dt><dd>Consultant</dd></div>
+      <div><dt>Tools</dt><dd>Excel, SQL, Power BI</dd></div>
+      <div><dt>Timeline</dt><dd>2 weeks</dd></div>
+    </dl>
+
+    <img class="project-cover" src="p1 infographic.png" alt="Project 1 dashboard preview">
+
+    <section>
+      <h2>The problem</h2>
+      <p> ExpressLane, a high-volume campus coffee shop, experiences long queues and extended customer waiting times during the morning rush hour (7:30 AM to 8:30 AM) due to its limited single-counter service capacity. With an 80% server utilization rate and an average waiting time of 9.60 minutes, the existing system struggles to accommodate the increasing number of student customers before classes begin. This results in queue congestion, potential customer abandonment (balking and reneging), and possible lost sales as students may choose competing coffee shops.</p>
+    </section>
+
+    <section>
+      <h2>The data</h2>
+      <p> The ExpressLane Queue Optimization study focuses on customer arrivals and service capacity during the morning rush hour, specifically from 7:30 AM to 8:30 AM. The analysis uses queuing theory to evaluate the existing single-counter system (M/M/1) and compare it with a proposed two-counter system (M/M/2).</p>
+      <p>The baseline system has an average customer arrival rate of 20 customers per hour and a service rate of 25 customers per hour. This results in an 80% server utilization rate, an average queue waiting time of 9.60 minutes, and a 51.2% probability of having more than two customers in the system.</p>
+    </section>
+
+    <section>
+      <h2>My process</h2>
+      <ol>
+        <li>Step 1: Data collection and observation
+            <p>The first step was to understand the actual customer flow during the busiest period of the day.</p>
+
+            <p>The observation focused on:</p>
+            <p>- Customer arrival times</p>
+            <p>- Number of customers arriving within a given interval</p>
+            <p>- Time spent waiting in the queue.</p>
+            <p>- Time required to complete each transaction.</p>
+            <p>- Number of customers served.</p>
+            <p>- Instances of customers leaving or abandoning the queue, if recorded.</p>
+        </li>
+
+        <li>Step 2: Organizing and analyzing the data using Excel
+          <p>Excel was used as the initial analytical tool to organize the observations and calculate important queuing indicators.</p>
+
+        <img src="p1Excelmy.png" alt="Project 1 Excel arrangement of data"> 
+
+          <p>How Excel was used:</p>
+            <ol>
+              <li>Entered customer arrival, service-start, and service-end times.</li>
+              <li>Organized the records chronologically.</li>
+              <li>Calculated the waiting time of each customer.</li>
+              <li>Calculated the service time of each transaction.</li>
+              <li>Summarized customer arrivals and service performance.</li>
+            </ol>
+      
+          <p>What this accomplished:</p>
+
+          <img src="p1Excel.png" alt="Project 1 Representaion in Excel"> 
+          <p>Excel provided the preliminary measurements needed to understand how much time customers spent waiting and how quickly the coffee shop could process transactions.</p>
+          <p>It also provided the numerical basis for comparing the original system with the proposed fast-lane arrangement.</p>
+        </li>
+
+        <li>Step 3: Managing and querying the data using SQL
+        <p>SQL was used as the database management and querying component of the proposed analytical workflow.</p>
+        <p>Once the observations were structured into a database, SQL could retrieve and summarize the records needed for the queuing analysis.</p>
+
+        <img src="p1SQLsample.jpg" alt="Project 1 SQL"> 
+
+        <p>How SQL was used:</p>
+          <ul>
+            <li>Retrieved customer records within the morning rush-hour period.</li>
+            <li>Grouped customer arrivals by time interval.</li>
+            <li>Calculated average waiting and service times.</li>
+            <li>Counted the number of transactions processed.</li>
+            <li>Prepared summarized data for visualization.</li>
+          </ul>
+        <p>What this accomplished:</p>
+        <p>SQL made it easier to retrieve specific records and generate summarized datasets without manually examining every transaction.</p>
+        </li>
+
+        <li>Step 4: Queuing analysis and simulation
+        <p>This was the most important stage of the project because it addressed the actual operational problem.The existing single-counter arrangement was evaluated against a proposed system with an additional service counter or barista.</p>
+
+        <img src="p1Simulation.png" alt="Project 1 Simulation">
+
+        <p>The purpose of the simulation was to estimate how the additional counter could affect customer waiting times and overall service performance.</p>
+        <p>How the solution was evaluated:</p>
+        <ol>
+          <li>Establish the baseline waiting time under the original one-counter arrangement.</li>
+          <li>Estimate the service capacity of the proposed two-counter system.</li>
+          <li>Compare the expected waiting time under both arrangements.</li>
+          <li>Determine whether the improvement justifies adding another service counter or barista.</li>
+        </ol>
+        </li>
+
+        <li>Step 5: Creating the interactive dashboard using Power BI</li>
+        <p>Power BI was used to transform the summarized analytical results into a visual dashboard that management could easily understand.The objective was to make the difference between the existing queuing system and the proposed fast lane immediately visible.</p>
+        <p>How Power BI was used:</p>
+        <ol>
+          <li>Imported the cleaned and summarized data from Excel or SQL.</li>
+          <li>Created KPI cards to display important performance indicators.</li>
+          <li>Developed charts comparing the original and proposed queuing systems.</li>
+          <li>Presented customer arrival patterns during the morning rush hour.</li>
+          <li>Visualized the reduction in waiting time after adding a second counter.</li>
+        </ol>
+
+        <img src="p1PowerBi.jpg" alt="Project 1 Power BI illustration">
+
+        <p>The dashboard makes it easier to communicate the benefits of adding a second service counter and supports management's decision to adopt the fast lane.</p>
+
+      </ol>
+    </section>
+
+    <section>
+      <h2>Key findings</h2>
+      <ol>
+        <li>High Server Utilization: The existing M/M/1 system operates at 80% utilization, indicating that the single service counter is handling a substantial portion of its maximum service capacity.</li>
+        <li>Significant Queue Congestion: The baseline system has a 51.2% probability of having more than two customers in the system, indicating a considerable risk of congestion during morning rush hours..</li>
+        <li>Improved Service Efficiency: Adding a second service counter through the M/M/2 model reduces per-server utilization from 80% to 40%, allowing customers to be served more efficiently.</li>
+        <li>Reduced Customer Waiting Time: The proposed two-counter system reduces the average queue waiting time from 9.60 minutes to just 0.456 minutes (approximately 27.4 seconds), representing a 95.25% reduction.</li>
+        <li>Need for Strategic Staffing: Implementing dual staffing during peak hours (7:15 AM to 8:45 AM), separating order-taking and drink preparation, and establishing a dedicated grab-and-go express line can help minimize customer congestion.</li>
+      </ol>
+      <p>Overall Finding:</p>
+
+      <img src="p1Keyfinding.png" alt="Project 1 Findings Preview">
+
+      <p>The analysis demonstrates that expanding the coffee shop's service capacity from one counter to two can significantly reduce waiting times and improve operational efficiency. Implementing a dedicated fast lane, supported by strategic staffing and workstation organization, is a recommended solution to address morning rush-hour congestion.</p>
+      
+    </section>
+
+    <section>
+      <h2>Result and impact</h2>
+      <p>The primary result of the analysis was the significant reduction in customer waiting time when moving from a single-counter system to a two-counter system.</p>
+
+      <img src="p1Results.png" alt="Project 1 Results">
+
+      <p>The results indicate the following potential improvements:</p>
+      <ol>
+        <li>Reduced waiting time: Customers spend significantly less time waiting for their orders.</li>
+        <li>Improved customer satisfaction: Faster service can provide a more convenient experience for students.</li>
+        <li>Better operational efficiency: Two service providers can handle customer demand simultaneously.</li>
+        <li>Reduced risk of lost sales: Shorter queues may discourage customers from abandoning the purchasing process.</li>
+        <li>Improved resource allocation: Management can schedule additional staff during peak hours rather than throughout the entire day.</li>
+      </ol>
+      <p>Importantly, the 95.2% figure represents the reduction in the supplied modeled waiting times. Actual customer satisfaction, sales recovery, and abandonment reductions would need to be measured after implementation.</p>
+    </section>
+
+    <div class="project-nav">
+      <a href="index.html#projects" class="btn btn-outline">All projects</a>
+      <a href="index.html#contact" class="btn">Contact me</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; Hanz Reyes. All rights reserved.</p>
+    <ul>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 4 | Hanz Reyes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">Hanz Reyes</a>
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#projects" class="active">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a href="index.html#contact" class="btn btn-sm">Contact me</a>
+  </header>
+
+  <main class="project-page">
+    <a href="index.html#projects" class="back-link">&larr; Back to projects</a>
+
+    <h1> PrimeTrust Banking Corporation </h1>
+    <p class="lead"> This project focuses on determining the optimal allocation of lending funds among different loan categories, such as personal loans, and housing loans, at PrimeTrust Banking Corporation. It aims to maximize the bank's expected interest income while considering limited lending capital, loan demand, and financial constraints.  </p>
+
+    <dl class="project-meta">
+      <div><dt>Role</dt><dd> Operations Research Analyst </dd></div>
+      <div><dt>Tools</dt><dd>Excel, Solver</dd></div>
+      <div><dt>Timeline</dt><dd>2 weeks</dd></div>
+    </dl>
+
+    <img class="project-cover" src="project4.jpg" alt="Project 4 dashboard preview">
+
+    <section>
+      <h2>The problem</h2>
+      <p> A banking institution faces challenges in allocating its limited lending funds among different loan categories while maximizing interest income and managing financial risks. The bank needs to determine the optimal amount of funds to allocate to personal loans, business loans, and housing loans while considering budget limitations, lending policies, and loan requirements. </p>
+    </section>
+
+    <section>
+      <h2>The data</h2>
+      <img src="p4data.png" alt="Describe the chart">
+      <ul> 
+        <li> Total available funds for lending.</li>
+        <li> Interest rates for different loan categories.</li>
+        <li> Maximum and minimum loan allocation limits. </li>
+        <li> Loan demand from customers.</li>
+        <li> Risk limitations for each loan category.</li>
+        <li> Expected interest income per loan category.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>My process</h2>
+      <ol>
+        <li> Data preparation in Excel</li>
+        <img src="p4Step1.png" alt="Describe the chart">
+        <p>The Inputs worksheet stores each loan category's annual interest rate, demand cap, minimum allocation, and risk weight. Portfolio-level assumptions are stored separately. The Optimization Model worksheet links to these inputs so assumptions can be updated in one place.</p>
+
+        <li> Linear programming model development</li>
+        <p>Decision variables: P = personal-loan allocation, B = business-loan allocation, and H = housing-loan allocation, all measured in PHP.</p>
+        <p>Objective: Maximize Z = 0.14P + 0.12B + 0.09H.</p>
+        <p>Subject to:</p>
+        <img src="P4Step2.png" alt="Describe the chart">
+        <p>The objective and constraints are linear, so Simplex LP is an appropriate solving method.</p>
+
+        <li> Optimization Using Excel Solver</li>
+        <p>The workbook's Optimization Model sheet contains the decision cells, annual income formulas, risk calculations, and constraint totals.</p>
+
+        <li> Optimized Allocation and Computation</li>
+        <img src="p4Step4.png" alt="Describe the chart">
+
+        <li> Data visualization</li>
+        <img src="p4Visual.png" alt="Describe the chart">
+
+        <li>Sensitivity Analysis</li>
+        <p>Expected annual interest income across scenarios.</p>
+        <img src="p4Step5.1.png" alt="Describe the chart">
+        <img src="p4Step5.png" alt="Describe the chart">
+        <p>A 10% decrease in capital reduces modeled income to ₱1,075,714.29. A 10% increase raises it to ₱1,290,000.00. A one-percentage-point increase in the business-loan rate raises modeled income to ₱1,227,142.86.</p>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Key findings</h2>
+      <ul>
+        <li> Personal loans reach their ₱3,000,000 demand cap because they have the highest assumed rate.</li>
+        <li> Business loans receive approximately ₱4,428,571.43 and housing loans receive approximately ₱2,571,428.57.</li>
+        <li> Expected annual interest income is approximately ₱1,182,857.14.</li>
+        <li> Weighted risk exposure reaches the ₱900,000 ceiling in the base case.</li>
+        <li> Changes in capital and interest rates affect modeled income and may change the optimal allocation.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Result and impact</h2>
+      <p> Under the illustrative assumptions, the model allocates ₱3.00 million to personal loans, ₱4.43 million to business loans, and ₱2.57 million to housing loans. It uses the full ₱10 million capital, respects category demand and minimums, and meets the risk ceiling. Expected annual interest income is approximately ₱1.183 million.</p>
+      <p> The analysis provides managemnet with a data-driven basis for lending decisions, helping improve fund allocation, evaluate financial changes, and maximize potential interest income while considering lending restricions.</p>
+    </section>
+
+    <div class="project-nav">
+      <a href="index.html#projects" class="btn btn-outline">All projects</a>
+      <a href="index.html#contact" class="btn">Contact me</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; Hanz Reyes. All rights reserved.</p>
+    <ul>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

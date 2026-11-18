@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 3 | Hanz Reyes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">Hanz Reyes</a>
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#projects" class="active">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a href="index.html#contact" class="btn btn-sm">Contact me</a>
+  </header>
+
+  <main class="project-page">
+    <a href="index.html#projects" class="back-link">&larr; Back to projects</a>
+
+    <h1>NexGen Products Manufacturing Production Optimization</h1>
+    <p class="lead">This project focuses on analyzing and determining the optimal combination and quantity of products that NexGen Manufacturing should produce to maximize its total profit while considering limited resources, such as raw materials, labor hours, and machine capacity.</p>
+
+    <dl class="project-meta">
+      <div><dt>Role</dt><dd> Business Consultant</dd></div>
+      <div><dt>Tools</dt><dd>Excel, SQL, Power BI</dd></div>
+      <div><dt>Timeline</dt><dd> 1 week </dd></div>
+    </dl>
+
+    <img class="project-cover" src="project3.jpg" alt="Project 3 dashboard preview">
+
+    <section>
+      <h2> The problem </h2>
+      <p>NexGen Products Manufacturing needs to determine the optimal combination and quantity of products to manufacture. Production is limited by raw materials, labor hours, and machine capacity. The objective is to maximize total profit without exceeding any available resource.</p>
+    </section>
+
+    <section>
+      <h2>The data</h2> 
+      <img src="p3Data.png" alt="Describe the chart">
+    </section>
+
+    <section>
+      <h2>My process</h2>
+        <p>Step 1: Data Preparation in Excel</p>
+        <img src="p3Step1.png" alt="Describe the chart">
+        <p>The production data was entered into Excel and organized into a model containing resource requirements, profit per unit, production quantities, and total profit. The production quantity cells were treated as decision variables. These are the cells that the optimization process changes.</p>
+
+        <p>Step 2: Linear Programming Model Development</p>
+        <p>The decision variables are X₁ = Product A quantity, X₂ = Product B quantity, and X₃ = Product C quantity.</p>
+        <p>Objective: Maximize Z = 40X₁ + 50X₂ + 45X₃</p>
+      <img src="p3Step2.png" alt="Describe the chart">
+        <p>The objective function converts production quantities into total profit. Each constraint calculates the total resource consumed by the production plan and prevents the model from exceeding available capacity.</p>
+
+        <p>Step 3: Optimization Using Excel Solver</p>
+        <img src="p3Step3.png" alt="Describe the chart">
+        <p>Excel Solver was used to maximize the Total Profit cell by changing the three production quantity cells. The resource constraints were entered so that raw-material, labor, and machine usage could not exceed their available capacities. Simplex LP was selected because the objective and constraints are linear.</p>
+
+        <p>Step 4: Data visualization</p>
+        <p>The optimal production plan is Product A = 151 units, Product B = 87 units, and Product C = 37 units. This combination produces a maximum total profit of ₱12,055.</p>
+        <img src="p3Step4.png" alt="Describe the chart">
+
+        <p>Step 5: Resource Validation</p>
+        <p>Raw materials used = 600 of 600 units; labor used = 399 of 400 hours; machine hours used = 500 of 500 hours. All three resources remain within their limits.</p>
+        <img src="p3Step5.png" alt="Describe the chart">
+
+        <p>SQL Data Preparation</p>
+        <p>SQL was used to organize the production dataset in a structured table so the product requirements and profit information could be retrieved consistently for analysis.</p>
+        <img src="p3Step6.png" alt="Describe the chart">
+
+        <p>Step 7: Power BI Data Visualization</p>
+        <p>The optimized production quantities and profit results were prepared for Power BI. The dashboard summarizes maximum profit, total units produced, product quantities, and resource utilization.</p>
+        <img src="p3Step7.png" alt="Describe the chart">
+    </section>
+
+    <section>
+      <h2>Key findings</h2>
+      <ul>
+        <li>The optimal production plan is 151 units of Product A, 87 units of Product B, and 37 units of Product C.</li>
+        <li>The maximum calculated profit is ₱12,055.</li>
+        <li>Raw material utilization is 100.0%, labor utilization is 99.8%, and machine utilization is 100.0%.</li>
+        <li>The production plan stays within all resource limitations.</li>
+        <li>Linear programming provides a structured way to compare production combinations and identify the most profitable feasible plan.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Result and impact</h2>
+      <p>Using the hypothetical dataset, the optimization recommends producing 151 units of Product A, 87 units of Product B, and 37 units of Product C, generating a maximum total profit of ₱12,055. The result gives management a data-driven basis for production planning while keeping raw materials, labor, and machine usage within capacity.</p>
+      <p>Excel performs the model calculations and Solver optimization, SQL organizes the production data, and Power BI communicates the final results through management-friendly visuals.</p>
+    </section>
+
+    <div class="project-nav">
+      <a href="index.html#projects" class="btn btn-outline">All projects</a>
+      <a href="index.html#contact" class="btn">Contact me</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; Hanz Reyes. All rights reserved.</p>
+    <ul>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
